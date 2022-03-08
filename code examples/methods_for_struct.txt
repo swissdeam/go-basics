@@ -1,0 +1,38 @@
+package main
+
+import "fmt"
+
+type developer struct {
+	name       string
+	age        int
+	level      string
+	expirience int
+}
+
+func (d developer) info() {
+	fmt.Println("My name is ", d.name, " and i'm a ", d.age, "y.o.")
+}
+
+func (d developer) job() {
+	fmt.Println("my level is ", d.level, " and i have ", d.expirience, "years of expirience development")
+}
+
+func (d developer) hobby(hobbyName string) {
+
+	fmt.Println(d.name, "he is a huge into", hobbyName)
+
+}
+
+func main() {
+	var Pavel developer = developer{
+		name:       "Pavel",
+		age:        21,
+		level:      "pre-junior",
+		expirience: 0,
+	}
+
+	Pavel.info()
+	Pavel.job()
+	Pavel.hobby("Photography")
+
+}

@@ -14,4 +14,8 @@ There is a guide how to use pointers to handle with Pure functions args, as they
 There is how we can use pointers with structs and their fields
 
 ### Methods
-Now we can create functions just for specal types, just adding (parameter type_name) between <func> and <func_name>
+Now we can create functions just for specal types, just adding (parameter type_name) between <func> and <func_name>.
+
+### Methods for structs
+***From this moment all of code will be in txt files , which i will add for each chapter to "code examples" folder***
+there is how we can create some methods(func for certain struct or type) for "developer" struct
