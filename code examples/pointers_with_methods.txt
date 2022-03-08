@@ -1,0 +1,26 @@
+package main
+
+import "fmt"
+
+type person struct {
+	name string
+	age  int
+}
+
+func (p *person) changeAge(newAge int) {
+	p.age = newAge
+}
+
+func main() {
+
+	tom := person{
+		name: "Tom",
+		age:  2,
+	}
+
+	tomPointer := &tom
+
+	fmt.Println(tom.age)
+	tomPointer.changeAge(5)
+	fmt.Println(tom.age)
+}

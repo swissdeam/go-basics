@@ -19,3 +19,6 @@ Now we can create functions just for specal types, just adding (parameter type_n
 ### Methods for structs
 ***From this moment all of code will be in txt files , which i will add for each chapter to "code examples" folder***
 there is how we can create some methods(func for certain struct or type) for "developer" struct
+
+### Methods for Pointers
+we cannot change some fields in struct when we write <name_of_struct.name_of_methods()> we have to create pointer for struct. With pointer methods can change value of fields in struct 
