@@ -2,17 +2,18 @@ package main
 
 import "fmt"
 
-// pointers
-
-func main() {
-	A := 2
-	fmt.Println("Value", A) // "A" is still equal 2
-	changeValue(&A)         // we must using pointers, 'cause without it, function "changeValue" gets just a copy of "A", not the original "A".
-	// in this case, using "&", we say that we give a source of original "A" to the func.
-	fmt.Println("Value", A) // after func we see, that fuc used the original "A" and changed it
+type Person struct { // syntax of creating struct
+	name string
+	age  int
 }
 
-func changeValue(x *int) { // using this pure-func, we must declarate that we use pointer to the original vars
-	*x += 2 // in parameters and in body of func
-
+func main() {
+	Tom := Person{"G", 34}
+	var agePointer *int = &Tom.age // creating pointer for one of struct' field
+	var tomPointer *Person = &Tom  // creating pointer for struct as well, through it we can change fields of struct
+	*agePointer = 4                // changing field with pointer for that field
+	fmt.Println(Tom.age)
+	tomPointer.age = 5 // changing field with pointer for ctruct the feild in / syntax | structPointer.{name_field_of_struct} = ...|
+	// the same thing as (*tomPointer).age = 5  / idk why yet
+	fmt.Println(Tom.age)
 }
