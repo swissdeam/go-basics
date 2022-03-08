@@ -2,18 +2,19 @@ package main
 
 import "fmt"
 
-type Person struct { // syntax of creating struct
-	name string
-	age  int
+type library []string // declarating type library
+//type department []string
+
+func (l library) printAll() { // function just for library type, it will work only with library vars
+	for _, val := range l { // Printing all values in massive which came in function
+		fmt.Println(val)
+	}
 }
 
 func main() {
-	Tom := Person{"G", 34}
-	var agePointer *int = &Tom.age // creating pointer for one of struct' field
-	var tomPointer *Person = &Tom  // creating pointer for struct as well, through it we can change fields of struct
-	*agePointer = 4                // changing field with pointer for that field
-	fmt.Println(Tom.age)
-	tomPointer.age = 5 // changing field with pointer for ctruct the feild in / syntax | structPointer.{name_field_of_struct} = ...|
-	// the same thing as (*tomPointer).age = 5  / idk why yet
-	fmt.Println(Tom.age)
+
+	var cityLib library = library{"book1", "book2", "book3"} // creating library var with 3 values in it
+	//var catalog department = department{"matter", "matter2", "matter3"}
+	cityLib.printAll() // use func wich was made only for library vars
+	//catalog.printAll() doesnt work with printAll
 }
