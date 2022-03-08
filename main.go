@@ -5,9 +5,9 @@ import "fmt"
 // pointers
 
 func main() {
-	x := "value of x"
-	a := &x         // & means where "a" take the data; in this case "a" takes data from "x"
-	fmt.Println(a)  // without "*", "a" equals addres of "x"
-	fmt.Println(*a) // with "*", "a" means value of source(in this case source is "x")
+	x := new(int)            // Creating pointer for nameless var with int-type
+	fmt.Println("value", *x) //value 0
+	*x = 6                   // changing value('cause there is "*") of nameless var
+	fmt.Println("value", *x) // value 8
 
 }
