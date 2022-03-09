@@ -1,0 +1,36 @@
+package main
+
+import "fmt"
+
+type routin interface { // creating interface with methods
+	coding()
+}
+
+type backender struct {
+	name string
+}
+
+type frontender struct {
+	name string
+}
+
+func working(r routin) { // usual func that can get each struct of interface
+	r.coding()
+}
+
+func (b backender) coding() { //how we can know that struct in interface? we must recreate methods in interface for each struct
+	//if in struct 3 methods, we have to create same 3 methods for struct
+	fmt.Println(b.name, "can code sometimes")
+}
+
+func (f frontender) coding() {
+	fmt.Println(f.name, "can code sometimes")
+}
+
+func main() {
+
+	var pavel routin = backender{"Pavel"} // when we have struct that matches with interface we can give them to the vars of that interface
+	var max routin = frontender{"Max"}
+	working(pavel) // struct "pavel" is var of interface type, and it was given to the func
+	working(max)
+}

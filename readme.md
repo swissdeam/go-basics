@@ -22,3 +22,6 @@ there is how we can create some methods(func for certain struct or type) for "de
 
 ### Methods for Pointers
 we cannot change some fields in struct when we write <name_of_struct.name_of_methods()> we have to create pointer for struct. With pointer methods can change value of fields in struct 
+
+### Interfaces
+Interface is show how some struct acts. There is methods in interface that each struct have for themself. Struct in interface should have all of methods that declarated in interface type.
