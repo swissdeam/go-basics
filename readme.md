@@ -25,3 +25,8 @@ we cannot change some fields in struct when we write <name_of_struct.name_of_met
 
 ### Interfaces
 Interface is show how some struct acts. There is methods in interface that each struct have for themself. Struct in interface should have all of methods that declarated in interface type.
+#### struct can be a member of several interfaces
+    If struct have all of methods from several interfaces its can be given to funcs which request different objects of thesee interfaces
+
+
+

@@ -33,4 +33,47 @@ func main() {
 	var max routin = frontender{"Max"}
 	working(pavel) // struct "pavel" is var of interface type, and it was given to the func
 	working(max)
+
 }
+
+
+
+/////////////////////////////////////////////////
+
+package main
+
+import "fmt"
+
+type heater interface {
+	heat()
+}
+
+type lighter interface {
+	lights()
+}
+
+type fireplace struct{}
+
+func (f fireplace) heat() {
+	fmt.Println("fireplese is heat as fuck")
+}
+
+func (f fireplace) lights() {
+	fmt.Println("fireplese is light like the sun")
+}
+
+func warmThePlace(h heater) {
+	h.heat()
+}
+
+func lightThePlace(l lighter) {
+	l.lights()
+}
+
+func main() {
+	myFireplace := fireplace{}
+
+	warmThePlace(myFireplace)
+	lightThePlace(myFireplace)
+}
+
