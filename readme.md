@@ -29,4 +29,8 @@ Interface is show how some struct acts. There is methods in interface that each 
     If struct have all of methods from several interfaces its can be given to funcs which request different objects of thesee interfaces
 
 
+### GOROOT 
+its for parallel compolation of functions, you can use it adding "go" before calling functions. 
+    go.name_of_functions(name_of_parametr)
+
 
