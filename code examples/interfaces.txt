@@ -77,3 +77,46 @@ func main() {
 	lightThePlace(myFireplace)
 }
 
+////////////////////////////////
+
+package main
+
+import "fmt"
+
+type vehicle interface {
+	move()
+}
+
+type car struct{ model string }
+type airplane struct{ model string }
+type bus struct{ model string }
+
+func (c car) move() {
+	fmt.Println(c.model, "? We dont have a car")
+}
+
+func (a airplane) move() {
+	fmt.Println(a.model, "Not now, son")
+}
+
+func (b bus) move() {
+	fmt.Println(b.model, "? You pay...")
+}
+
+func getSomePlace(v vehicle) {
+	v.move()
+}
+
+func main() {
+
+	tesla := car{"Tesla"}
+	boeng := airplane{"Boeng"}
+	paz := bus{"Pazik"}
+
+	vehicles := [...]vehicle{tesla, boeng, paz}
+
+	for _, vehicle := range vehicles {
+		getSomePlace(vehicle)
+	}
+
+}
